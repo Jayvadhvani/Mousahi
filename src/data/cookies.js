@@ -334,8 +334,8 @@ export const BRAND_INFO = {
   description: 'Freshly Baked Healthy Oats & Millet Cookies. 100% Sweetened with Organic Jaggery.',
   phone: '90234 66648',
   whatsappNumber: '919023466648',
-  instagram: 'mousahi.bakes',
-  instagramUrl: 'https://www.instagram.com/reels/DaJHFAezOrF/',
+  instagram: 'mou_sahi',
+  instagramUrl: 'https://www.instagram.com/mou_sahi/',
   facebook: 'Mousahi - Goodness in Every Bite',
   facebookUrl: 'https://www.facebook.com/profile.php?id=100076029161994#',
   highlights: [
