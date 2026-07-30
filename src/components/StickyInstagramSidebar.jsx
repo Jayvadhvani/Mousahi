@@ -21,7 +21,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Expanded Info on Hover (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
             <div className="flex items-center gap-1 text-[10px] font-bold text-blue-200 uppercase tracking-wider">
               <Sparkles className="w-3 h-3 text-blue-300 animate-pulse" />
               <span>Facebook Page</span>
@@ -34,7 +34,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Hover Arrow Indicator (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 pr-1">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 group-hover:pr-1">
             <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
               <ChevronRight className="w-4 h-4 text-white" />
             </div>
@@ -55,7 +55,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Expanded Info on Hover (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
             <div className="flex items-center gap-1 text-[10px] font-bold text-amber-200 uppercase tracking-wider">
               <Sparkles className="w-3 h-3 text-amber-300 animate-spin" style={{ animationDuration: '6s' }} />
               <span>Instagram Official</span>
@@ -68,7 +68,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Hover Arrow Indicator (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 pr-1">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 group-hover:pr-1">
             <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
               <ChevronRight className="w-4 h-4 text-white" />
             </div>
@@ -89,7 +89,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Expanded Info on Hover (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[220px] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out whitespace-nowrap overflow-hidden flex-col justify-center pl-0 group-hover:pl-3">
             <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-200 uppercase tracking-wider">
               <span>Fast Order</span>
             </div>
@@ -101,7 +101,7 @@ export default function StickyInstagramSidebar() {
           </div>
 
           {/* Hover Arrow Indicator (Desktop only) */}
-          <div className="hidden md:flex max-w-0 group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 pr-1">
+          <div className="hidden md:flex w-0 max-w-0 min-w-0 group-hover:w-auto group-hover:max-w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden items-center justify-center shrink-0 group-hover:pr-1">
             <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
               <ChevronRight className="w-4 h-4 text-white" />
             </div>
