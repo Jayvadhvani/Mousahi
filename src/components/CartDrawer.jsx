@@ -272,7 +272,7 @@ export default function CartDrawer({
                 <button
                   type="button"
                   onClick={handleProceedToForm}
-                  className="w-full bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-800 hover:from-emerald-700 hover:to-teal-900 text-white font-heading font-bold text-sm py-3.5 px-4 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm py-3.5 px-4 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
                 >
                   <MessageCircle className="w-5 h-5 fill-white text-emerald-600" />
                   <span>Proceed to Delivery Details</span>
@@ -386,7 +386,7 @@ export default function CartDrawer({
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-heading font-bold text-sm py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 hover:scale-101 transition-all"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 hover:scale-101 transition-all"
               >
                 <MessageCircle className="w-5 h-5 fill-white text-emerald-600" />
                 <span>Confirm Order on WhatsApp 📱</span>

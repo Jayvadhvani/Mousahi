@@ -46,7 +46,7 @@ export default function StickyInstagramSidebar() {
           href={BRAND_INFO.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white shadow-xl hover:shadow-2xl rounded-r-2xl border-y border-r border-white/40 overflow-hidden transition-all duration-300 ease-out flex items-center p-2 group/insta"
+          className="bg-pink-600 hover:bg-pink-700 text-white shadow-xl hover:shadow-2xl rounded-r-2xl border-y border-r border-white/40 overflow-hidden transition-all duration-300 ease-out flex items-center p-2 group/insta"
           title="Visit @mousahi.bakes on Instagram"
         >
           {/* Instagram Icon Badge */}
@@ -80,7 +80,7 @@ export default function StickyInstagramSidebar() {
           href={`https://wa.me/${BRAND_INFO.whatsappNumber}?text=Hi%20Mousahi%20Bakery,%20I%20want%20to%20place%20an%20order!`}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-xl hover:shadow-2xl rounded-r-2xl border-y border-r border-white/40 overflow-hidden transition-all duration-300 ease-out flex items-center p-2 group/wa"
+          className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-xl hover:shadow-2xl rounded-r-2xl border-y border-r border-white/40 overflow-hidden transition-all duration-300 ease-out flex items-center p-2 group/wa"
           title={`Chat on WhatsApp +91 ${BRAND_INFO.phone}`}
         >
           {/* WhatsApp Icon Badge */}
@@ -124,7 +124,7 @@ export default function StickyInstagramSidebar() {
           href={BRAND_INFO.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white px-3.5 py-2 rounded-full shadow-xl flex items-center gap-2 text-xs font-bold border border-white/40"
+          className="bg-pink-600 hover:bg-pink-700 text-white px-3.5 py-2 rounded-full shadow-xl flex items-center gap-2 text-xs font-bold border border-white/40"
         >
           <Instagram className="w-4.5 h-4.5" />
           <span>@{BRAND_INFO.instagram}</span>

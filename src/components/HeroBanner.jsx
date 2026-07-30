@@ -19,7 +19,7 @@ export default function HeroBanner({ onExploreMenu }) {
             
             {/* Top Badge */}
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3">
-              <div className="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/80 text-amber-950 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm my-auto">
+              <div className="inline-flex items-center gap-2 bg-amber-200/80 border border-amber-300/80 text-amber-950 px-3.5 py-1 rounded-full text-xs font-semibold shadow-sm my-auto">
                 <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-spin" style={{ animationDuration: '6s' }} />
                 <span>Fresh Batch Sample Product</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
@@ -30,7 +30,7 @@ export default function HeroBanner({ onExploreMenu }) {
             {/* Main Brand Title & Tagline */}
             <div className="space-y-2">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-amber-950 leading-[1.15] tracking-tight">
-                Ragi Oats <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-amber-600 to-emerald-800">Chocolate Cookies</span>
+                Ragi Oats Chocolate Cookies
               </h1>
               <p className="font-heading font-semibold text-lg sm:text-xl text-amber-800 tracking-wide flex items-center justify-center lg:justify-start gap-2">
                 <span>Wholesome • Nutritious • Delicious</span>
@@ -70,23 +70,23 @@ export default function HeroBanner({ onExploreMenu }) {
               </div>
 
               <div className="bg-white/95 p-3 rounded-2xl border border-amber-200/80 shadow-sm flex flex-col items-center text-center">
-                <div className="w-9 h-9 rounded-xl bg-pink-100/80 flex items-center justify-center text-pink-700 mb-1.5">
-                  <Heart className="w-4 h-4 fill-pink-500 text-pink-500" />
+                <div className="w-9 h-9 rounded-xl bg-pink-100/80 flex items-center justify-center text-amber-800 mb-1.5">
+                  <Heart className="w-4 h-4 text-pink-600" />
                 </div>
-                <span className="font-heading font-bold text-[11px] text-amber-950 uppercase tracking-wide">HEALTHY LIFESTYLE</span>
-                <span className="text-[10px] text-amber-700 font-medium">45 Days Shelf Life</span>
+                <span className="font-heading font-bold text-[11px] text-amber-950 uppercase tracking-wide">GOODNESS MADE WITH LOVE</span>
+                <span className="text-[10px] text-amber-700 font-medium">Baked Fresh to order</span>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-              <a
-                href="#product"
-                className="w-full sm:w-auto bg-[#3D2314] hover:bg-[#2A180E] text-white font-heading font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <button
+                onClick={onExploreMenu}
+                className="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white font-heading font-bold text-sm px-8 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 group/btn"
               >
-                <span>Order Sample Pack (₹130)</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+                <span>Explore Full Menu</span>
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
 
               <a
                 href={`https://wa.me/${BRAND_INFO.whatsappNumber}?text=Hi%20Mousahi%20Bakery,%20I%20want%20to%20place%20an%20order%20for%20the%20Ragi%20Oats%20Chocolate%20Cookies%20sample!`}
@@ -105,7 +105,6 @@ export default function HeroBanner({ onExploreMenu }) {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              <div className="absolute -inset-4 bg-gradient-to-tr from-amber-400 via-emerald-400 to-amber-200 rounded-3xl blur-xl opacity-20 animate-pulse-subtle" />
               
               {/* Product Poster Card */}
               <div className="relative bg-white p-3 rounded-3xl shadow-xl border border-amber-200/80 overflow-hidden group">
@@ -115,7 +114,7 @@ export default function HeroBanner({ onExploreMenu }) {
                   className="w-full h-[360px] sm:h-[420px] object-cover rounded-2xl group-hover:scale-103 transition-transform duration-700"
                 />
 
-                <div className="absolute top-5 left-5 bg-gradient-to-r from-amber-700 to-emerald-800 text-white text-xs font-heading font-bold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                <div className="absolute top-5 left-5 bg-amber-800 text-white text-xs font-heading font-bold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-amber-200" />
                   <span>MRP ₹130 | Net Qty 100g</span>
                 </div>

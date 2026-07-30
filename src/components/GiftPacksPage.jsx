@@ -294,7 +294,7 @@ export default function GiftPacksPage({ onBack, onAddToCart }) {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-gradient-to-r from-pink-600 via-pink-700 to-rose-700 hover:from-pink-700 hover:to-rose-800 text-white font-heading font-bold text-xs py-3.5 px-6 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all hover:scale-102"
+                className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white font-heading font-bold text-xs py-3.5 px-6 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all hover:scale-102"
               >
                 <MessageCircle className="w-4 h-4 fill-white text-pink-600" />
                 <span>Confirm Gift Details on WhatsApp</span>

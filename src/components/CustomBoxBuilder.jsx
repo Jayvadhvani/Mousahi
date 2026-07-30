@@ -92,7 +92,7 @@ export default function CustomBoxBuilder({ onAddToCart }) {
                     onClick={() => setBoxSize(b.size)}
                     className={`p-3.5 rounded-2xl border text-center transition-all relative ${
                       boxSize === b.size
-                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white border-amber-500 shadow-md scale-102'
+                        ? 'bg-amber-600 text-white border-amber-600 shadow-md scale-102'
                         : 'bg-amber-50/50 text-amber-900 border-amber-200 hover:bg-amber-100'
                     }`}
                   >
@@ -197,7 +197,7 @@ export default function CustomBoxBuilder({ onAddToCart }) {
               </div>
               <div className="w-full h-3 bg-amber-950 rounded-full overflow-hidden p-0.5 border border-amber-800/60">
                 <div
-                  className="h-full bg-gradient-to-r from-amber-400 to-pink-500 rounded-full transition-all duration-300"
+                  className="h-full bg-amber-500 rounded-full transition-all duration-300"
                   style={{ width: `${Math.min(100, (totalSelected / boxSize) * 100)}%` }}
                 />
               </div>
@@ -234,7 +234,7 @@ export default function CustomBoxBuilder({ onAddToCart }) {
               <button
                 onClick={handleAddBoxToCart}
                 disabled={totalSelected === 0}
-                className="w-full bg-gradient-to-r from-amber-500 to-pink-500 hover:from-amber-600 hover:to-pink-600 disabled:opacity-50 text-white font-heading font-bold text-sm py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                className="w-full bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white font-heading font-bold text-sm py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
               >
                 <ShoppingBag className="w-5 h-5" />
                 <span>Add Custom Box to Order</span>
