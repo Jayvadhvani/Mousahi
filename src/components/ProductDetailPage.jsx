@@ -55,10 +55,10 @@ export default function ProductDetailPage({ product, onBack, onAddToCart, onSele
         <div className="bg-white rounded-3xl overflow-hidden border border-amber-200/90 shadow-bakery grid md:grid-cols-12 gap-0">
           {/* Left Side: Product Images Gallery (Vertical), Badges & Catalog Switcher */}
           <div className="md:col-span-6 flex flex-col bg-amber-50/15 border-r border-amber-100">
-            <div className="flex flex-row flex-1 min-h-[400px]">
+            <div className="flex flex-col-reverse sm:flex-row flex-1 min-h-[400px]">
               
               {/* Same-Product Thumbnail Column (Amazon-style) */}
-              <div className="w-20 flex flex-col gap-3 p-3 bg-amber-50/40 border-r border-amber-100/70 items-center justify-start overflow-y-auto shrink-0 select-none">
+              <div className="w-full sm:w-20 flex flex-row sm:flex-col gap-3 p-3 bg-amber-50/40 border-t sm:border-t-0 sm:border-r border-amber-100/70 items-center justify-center sm:justify-start overflow-x-auto sm:overflow-y-auto shrink-0 select-none">
                 {product.images?.map((img, idx) => (
                   <button
                     key={idx}
