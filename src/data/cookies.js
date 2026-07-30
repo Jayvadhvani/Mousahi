@@ -4,11 +4,11 @@ export const COOKIE_DATA = [
     name: 'Oats Raisin Cookies',
     subtitle: 'Wholesome oats, sweet raisins & natural ingredients',
     category: 'Artisan Cookies',
-    image: '/images/oats_raisin.png',
+    image: './images/oats_raisin.png',
     images: [
-      '/images/oats_raisin.png',
-      '/images/oats_raisin_alt.png',
-      '/images/oatmeal_jaggery.jpg'
+      './images/oats_raisin.png',
+      './images/oats_raisin_alt.png',
+      './images/oatmeal_jaggery.jpg'
     ],
     description: 'Baked with love, especially for your order. Wholesome oats, sweet raisins, and natural premium ingredients baked to absolute perfection. Zero refined sugar, zero preservatives.',
     badge: 'High In Fiber 🌾',
@@ -73,12 +73,12 @@ export const COOKIE_DATA = [
     name: 'Ragi Oats Chocolate Cookies',
     subtitle: 'Wholesome • Nutritious • Delicious',
     category: 'Flagship Product',
-    image: '/images/ragi_choco_chip.png',
+    image: './images/ragi_choco_chip.png',
     images: [
-      '/images/ragi_choco_chip.png',
-      '/images/ragi_choco_chip_alt.png',
-      '/images/ragi_choco_chip_alt2.png',
-      '/images/ragi_choco_chip.jpg'
+      './images/ragi_choco_chip.png',
+      './images/ragi_choco_chip_alt.png',
+      './images/ragi_choco_chip_alt2.png',
+      './images/ragi_choco_chip.jpg'
     ],
     description: 'Handcrafted artisan cookies baked fresh on every order using nutrient-dense Ragi Flour, Oats Flour, pure Ghee, Jaggery, Cocoa Powder, and a pinch of Salt. Zero refined sugar, zero artificial preservatives.',
     badge: 'Flagship Product ⭐',
@@ -144,11 +144,11 @@ export const COOKIE_DATA = [
     name: 'Atta Jaggery Nankhatai',
     subtitle: 'Traditional taste, made with love',
     category: 'Classic Nankhatai',
-    image: '/images/wheat_almond.png',
+    image: './images/wheat_almond.png',
     images: [
-      '/images/wheat_almond.png',
-      '/images/wheat_almond_alt.png',
-      '/images/wheat_almond.jpg'
+      './images/wheat_almond.png',
+      './images/wheat_almond_alt.png',
+      './images/wheat_almond.jpg'
     ],
     description: 'Soft, crumbly and wholesome Nankhatai made with whole wheat atta and jaggery. A perfect blend of tradition, nutrition, and melt-in-the-mouth texture.',
     badge: 'Traditional Recipe 💖',
@@ -215,11 +215,11 @@ export const COOKIE_DATA = [
     name: 'Multigrain Cookies',
     subtitle: 'Wholesome grains, deliciously healthy',
     category: 'Healthy & Wholesome',
-    image: '/images/multigrain_cookies.png',
+    image: './images/multigrain_cookies.png',
     images: [
-      '/images/multigrain_cookies.png',
-      '/images/multigrain_cookies_alt.png',
-      '/images/multigrain_closeup.jpg'
+      './images/multigrain_cookies.png',
+      './images/multigrain_cookies_alt.png',
+      './images/multigrain_closeup.jpg'
     ],
     description: 'Crunchy, nutritious, and packed with the goodness of multigrains and premium seeds. Perfect for a healthy lifestyle and active snack hours.',
     badge: 'Diet Friendly 🥦',
@@ -291,11 +291,11 @@ export const COOKIE_DATA = [
     name: 'Coconut Almond Cookies',
     subtitle: 'Crispy, wholesome & naturally sweetened with jaggery',
     category: 'Nut & Coconut Delight',
-    image: '/images/coconut_almond.png',
+    image: './images/coconut_almond.png',
     images: [
-      '/images/coconut_almond.png',
-      '/images/coconut_almond_alt.png',
-      '/images/coconut_almond_closeup.jpg'
+      './images/coconut_almond.png',
+      './images/coconut_almond_alt.png',
+      './images/coconut_almond_closeup.jpg'
     ],
     description: 'A perfect blend of coconut and almonds baked to golden perfection. Wholesome, crunchy, and delicious – made with love in every bite.',
     badge: 'Nutty Delight 🥥',

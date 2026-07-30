@@ -42,7 +42,7 @@ export default function AboutUsPage({ onBack }) {
           <div className="lg:col-span-5 relative z-10 flex justify-center">
             <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-4 border-amber-800 shadow-2xl">
               <img
-                src="/images/mousahi_hero.jpg"
+                src="./images/mousahi_hero.jpg"
                 alt="Artisan Home Baking"
                 className="w-full h-72 object-cover"
               />

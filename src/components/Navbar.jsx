@@ -26,7 +26,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
         {/* Brand Logo Image */}
         <Link to="/" className="flex items-center group shrink-0">
           <img 
-            src="/images/logo.png" 
+            src="./images/logo.png" 
             alt="Mousahi Logo" 
             className="h-14 w-auto object-contain transition-transform group-hover:scale-103" 
           />

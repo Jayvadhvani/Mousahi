@@ -52,7 +52,7 @@ export default function ArtisanStory() {
           <div className="lg:col-span-5 relative z-10 flex justify-center">
             <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-4 border-amber-800/60 shadow-2xl">
               <img
-                src="/images/mousahi_hero.jpg"
+                src="./images/mousahi_hero.jpg"
                 alt="Artisan Home Baking"
                 className="w-full h-80 object-cover"
               />

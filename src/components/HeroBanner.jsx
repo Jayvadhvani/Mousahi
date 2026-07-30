@@ -109,7 +109,7 @@ export default function HeroBanner({ onExploreMenu }) {
               {/* Product Poster Card */}
               <div className="relative bg-white p-3 rounded-3xl shadow-xl border border-amber-200/80 overflow-hidden group">
                 <img
-                  src="/images/ragi_choco_chip.jpg"
+                  src="./images/ragi_choco_chip.jpg"
                   alt="Ragi Oats Chocolate Cookies Sample Pack"
                   className="w-full h-[360px] sm:h-[420px] object-cover rounded-2xl group-hover:scale-103 transition-transform duration-700"
                 />

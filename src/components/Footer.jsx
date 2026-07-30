@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
               <img 
-                src="/images/logo.png" 
+                src="./images/logo.png" 
                 alt="Mousahi Logo" 
                 className="h-12 w-auto object-contain brightness-0 invert" 
               />

@@ -110,7 +110,7 @@ export default function GiftPacksPage({ onBack, onAddToCart }) {
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-3xl overflow-hidden border border-amber-200/90 shadow-sm relative group">
               <img
-                src="/images/gift_pack.png"
+                src="./images/gift_pack.png"
                 alt="Mousahi Gift Box Package"
                 className="w-full h-auto object-cover rounded-3xl min-h-[350px] sm:min-h-[450px]"
               />
