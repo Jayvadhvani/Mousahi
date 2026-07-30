@@ -1,183 +1,218 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { COOKIE_DATA } from '../data/cookies';
-import { ShoppingBag, Star, Info, Heart, Minus, Plus, Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Star, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function ProductCatalog({ onAddToCart }) {
-  const cookie = COOKIE_DATA[0]; // Flagship product
-  const [selectedWeight, setSelectedWeight] = useState('100g');
-  const [quantity, setQuantity] = useState(1);
-  const [addedToast, setAddedToast] = useState(null);
-
-  const currentPrice = cookie.prices[selectedWeight];
-
-  const handleAddToCart = () => {
-    onAddToCart({
-      cookieId: cookie.id,
-      name: cookie.name,
-      image: cookie.image,
-      weight: selectedWeight,
-      quantity,
-      unitPrice: currentPrice,
-      totalPrice: currentPrice * quantity
-    });
-
-    setAddedToast(`${cookie.name} (${selectedWeight} × ${quantity}) added to cart! 🍪`);
-    setTimeout(() => setAddedToast(null), 3000);
-  };
-
+function ProductCard({ cookie, minPrice, onSelectProduct }) {
   return (
-    <section id="product" className="py-16 bg-[#FFFBF5] relative border-b border-amber-200/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
-        {/* Toast Notification */}
-        {addedToast && (
-          <div className="fixed bottom-6 right-6 z-50 bg-amber-950 text-amber-50 px-5 py-3 rounded-2xl shadow-2xl border border-amber-500/30 flex items-center gap-3 animate-bounce">
-            <span className="text-xl">✨</span>
-            <span className="font-heading font-bold text-sm">{addedToast}</span>
-          </div>
-        )}
+    <div 
+      className="group bg-white rounded-3xl border border-amber-200/80 hover:border-amber-400 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer h-full"
+      onClick={() => onSelectProduct(cookie)}
+    >
+      {/* Image Section */}
+      <div className="relative aspect-square overflow-hidden bg-amber-50">
+        <img
+          src={cookie.image}
+          alt={cookie.name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute top-4 left-4 bg-amber-950/85 backdrop-blur-sm text-amber-100 text-[10px] font-heading font-extrabold px-3 py-1 rounded-full border border-amber-800/40">
+          {cookie.badge}
+        </div>
+      </div>
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-950 text-xs font-bold px-3.5 py-1.5 rounded-full border border-amber-300">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-            <span>Official Sample Product Pack</span>
+      {/* Content Section */}
+      <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+        <div className="space-y-2">
+          {/* Rating */}
+          <div className="flex items-center gap-1.5 text-amber-500 text-xs font-extrabold">
+            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+            <span className="text-amber-950">{cookie.rating}</span>
+            <span className="text-amber-500 font-medium">({cookie.reviewsCount} reviews)</span>
           </div>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-amber-950">
+
+          <h3 className="font-heading font-extrabold text-xl text-amber-950 group-hover:text-amber-800 transition-colors">
             {cookie.name}
-          </h2>
-          <p className="text-base text-amber-900/80">
-            Wholesome • Nutritious • Delicious | Handcrafted with Ragi, Oats, Ghee & Jaggery
+          </h3>
+
+          <p className="text-xs text-amber-800 italic font-bold">
+            {cookie.subtitle}
+          </p>
+
+          <p className="text-xs text-amber-900/75 leading-relaxed font-medium line-clamp-3">
+            {cookie.description}
           </p>
         </div>
 
-        {/* Single Flagship Product Order Showcase Card */}
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden border border-amber-200/90 shadow-bakery grid md:grid-cols-12 gap-0">
-          
-          {/* Left Column: Product Image & Badges */}
-          <div className="md:col-span-6 relative bg-amber-50 min-h-[360px]">
-            <img
-              src={cookie.image}
-              alt={cookie.name}
-              className="w-full h-full object-cover"
-            />
-            
-            <div className="absolute top-4 left-4 bg-amber-950/85 backdrop-blur-md text-amber-100 text-xs font-heading font-bold px-3.5 py-1 rounded-full border border-amber-700/50">
-              {cookie.badge}
-            </div>
-
-            <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-amber-200 shadow-md">
-              <div className="flex items-center justify-between text-xs text-amber-950 font-bold">
-                <span>Net Quantity: 100g</span>
-                <span className="text-emerald-700 font-extrabold text-sm">MRP ₹130/-</span>
-              </div>
-              <p className="text-[10px] text-amber-700 font-medium mt-0.5">
-                (Incl. of all taxes) • Stand-Up Kraft Pouch & Glass Jar
-              </p>
-            </div>
+        {/* Pricing and Action */}
+        <div className="pt-4 border-t border-amber-100/80 flex items-center justify-between gap-4">
+          <div>
+            <span className="block text-[10px] text-amber-600 font-bold uppercase tracking-wider">Starts at</span>
+            <span className="text-lg font-heading font-extrabold text-amber-950">₹{minPrice}</span>
           </div>
 
-          {/* Right Column: Interactive Weight Selection & WhatsApp Order Details */}
-          <div className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-center gap-2 text-amber-500 text-xs font-bold mb-1">
-                  <div className="flex text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-amber-950">{cookie.rating}</span>
-                  <span className="text-amber-600">({cookie.reviewsCount} reviews)</span>
-                </div>
+          <span className="bg-amber-50 text-amber-950 group-hover:bg-amber-600 group-hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 border border-amber-200 group-hover:border-amber-600">
+            <span>Order Now</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-                <h3 className="font-heading font-bold text-2xl text-amber-950">
-                  {cookie.name}
-                </h3>
-                <p className="text-xs text-amber-900/80 leading-relaxed mt-2">
-                  {cookie.description}
-                </p>
+function CarouselWrapper({ onSelectProduct }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(3);
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsToShow(2);
+      } else {
+        setItemsToShow(3);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalItems = COOKIE_DATA.length;
+  const maxIndex = totalItems - itemsToShow;
+
+  // Make sure current index adjusts when itemsToShow changes
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [itemsToShow, maxIndex, currentIndex]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  useEffect(() => {
+    autoPlayRef.current = nextSlide;
+  });
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+    const interval = setInterval(play, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative group px-4 sm:px-8">
+      {/* Left Navigation Arrow */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border border-amber-200 text-amber-950 flex items-center justify-center shadow-md hover:bg-amber-50 transition-colors hover:scale-105"
+        aria-label="Previous Slide"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      {/* Outer Slider Box */}
+      <div className="overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+          }}
+        >
+          {COOKIE_DATA.map((cookie) => {
+            const minPrice = Math.min(...Object.values(cookie.prices));
+            return (
+              <div 
+                key={cookie.id} 
+                className="shrink-0 p-3"
+                style={{ width: `${100 / itemsToShow}%` }}
+              >
+                <ProductCard 
+                  cookie={cookie} 
+                  minPrice={minPrice} 
+                  onSelectProduct={onSelectProduct} 
+                />
               </div>
+            );
+          })}
+        </div>
+      </div>
 
-              {/* Ingredients Badges */}
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-amber-950 block">Key Ingredients:</span>
-                <div className="flex flex-wrap gap-1.5">
-                  {cookie.ingredients.map((ing, i) => (
-                    <span key={i} className="bg-amber-50 text-amber-900 text-[11px] font-semibold px-2.5 py-1 rounded-lg border border-amber-200">
-                      ✓ {ing}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      {/* Right Navigation Arrow */}
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white border border-amber-200 text-amber-950 flex items-center justify-center shadow-md hover:bg-amber-50 transition-colors hover:scale-105"
+        aria-label="Next Slide"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
 
-              {/* Weight Selector */}
-              <div className="space-y-2 pt-2 border-t border-amber-100">
-                <div className="flex justify-between items-center text-xs font-bold text-amber-950">
-                  <span>Select Sample Pack Size:</span>
-                  <span className="text-xl font-heading font-extrabold text-amber-800">₹{currentPrice * quantity}</span>
-                </div>
+      {/* Dots indicators */}
+      <div className="flex justify-center gap-2 mt-8">
+        {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              currentIndex === idx ? 'bg-amber-700 w-8' : 'bg-amber-300/80 hover:bg-amber-400'
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
-                <div className="grid grid-cols-4 gap-2">
-                  {[
-                    { w: '100g', label: 'Sample', p: 130 },
-                    { w: '250g', label: 'Pack', p: 310 },
-                    { w: '500g', label: 'Family', p: 600 },
-                    { w: '1kg', label: 'Bulk Box', p: 1150 }
-                  ].map((item) => (
-                    <button
-                      key={item.w}
-                      onClick={() => setSelectedWeight(item.w)}
-                      className={`py-2 px-1.5 rounded-xl text-center transition-all border ${
-                        selectedWeight === item.w
-                          ? 'bg-amber-600 text-white border-amber-600 shadow-sm'
-                          : 'bg-amber-50/60 text-amber-950 border-amber-200 hover:bg-amber-100'
-                      }`}
-                    >
-                      <span className="block font-heading font-bold text-xs">{item.w}</span>
-                      <span className="block text-[10px] font-semibold opacity-90">₹{item.p}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Quantity Modifier & Order Action */}
-            <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center bg-amber-100/80 rounded-xl p-1 border border-amber-200">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-amber-950 font-bold"
-                  >
-                    <Minus className="w-3.5 h-3.5" />
-                  </button>
-                  <span className="w-8 text-center font-heading font-bold text-sm text-amber-950">
-                    {quantity}
-                  </span>
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-amber-950 font-bold"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-                <button
-                  onClick={handleAddToCart}
-                  className="flex-1 bg-gradient-to-r from-amber-600 via-amber-700 to-emerald-800 hover:from-amber-700 hover:to-emerald-900 text-white font-heading font-bold text-xs py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
-                >
-                  <ShoppingBag className="w-4 h-4" />
-                  <span>Add Sample to Order (₹{currentPrice * quantity})</span>
-                </button>
-              </div>
-            </div>
-
+export default function ProductCatalog({ onSelectProduct, isNested = false }) {
+  return (
+    <div className={isNested ? "" : "py-20 bg-[#FFFBF5] relative border-b border-amber-200/40"} id={isNested ? undefined : "catalog"}>
+      <div className={isNested ? "space-y-12" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16"}>
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 bg-amber-100/70 text-amber-950 text-xs font-bold px-4 py-1.5 rounded-full border border-amber-300">
+            <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-spin" style={{ animationDuration: '3s' }} />
+            <span>Artisan Bakery Selection</span>
           </div>
-
+          <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-amber-950 tracking-tight">
+            Freshly Baked Healthy Cookies
+          </h2>
+          <p className="text-sm sm:text-base text-amber-900/80 max-w-2xl mx-auto font-medium">
+            Discover our premium cookies made with organic jaggery, millet flours, and zero artificial preservatives. Handcrafted fresh on every single order.
+          </p>
         </div>
 
+        {/* Product Cards Grid / Carousel */}
+        {!isNested ? (
+          <CarouselWrapper onSelectProduct={onSelectProduct} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {COOKIE_DATA.map((cookie) => {
+              const minPrice = Math.min(...Object.values(cookie.prices));
+              return (
+                <ProductCard 
+                  key={cookie.id} 
+                  cookie={cookie} 
+                  minPrice={minPrice} 
+                  onSelectProduct={onSelectProduct} 
+                />
+              );
+            })}
+          </div>
+        )}
+
       </div>
-    </section>
+    </div>
   );
 }

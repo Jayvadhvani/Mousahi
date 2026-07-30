@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Instagram, Facebook, ArrowUp, Send, Sparkles, Clock } from 'lucide-react';
 import { BRAND_INFO } from '../data/cookies';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -29,15 +30,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-700 text-white flex items-center justify-center text-lg font-bold shadow-sm">
-                🍪
-              </div>
-              <div>
-                <h3 className="font-heading font-extrabold text-2xl text-white tracking-tight leading-none">
-                  Mousahi
-                </h3>
-                <span className="text-xs text-amber-300 italic font-semibold">the smell of baking</span>
-              </div>
+              <img 
+                src="/images/logo.png" 
+                alt="Mousahi Logo" 
+                className="h-12 w-auto object-contain brightness-0 invert" 
+              />
             </div>
 
             <p className="text-xs text-amber-200/80 leading-relaxed">
@@ -81,11 +78,11 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="font-heading font-bold text-base text-amber-300">Quick Navigation</h4>
             <ul className="space-y-2 text-xs text-amber-200">
-              <li><a href="#product" className="hover:text-amber-400 transition-colors">🍪 Order Sample Product (₹130)</a></li>
-              <li><a href="#details" className="hover:text-amber-400 transition-colors">🌾 Ingredients & Specifications</a></li>
-              <li><a href="#posts" className="hover:text-amber-400 transition-colors">📸 Official Brand Feed</a></li>
-              <li><a href="#reviews" className="hover:text-amber-400 transition-colors">⭐ Verified Customer Reviews</a></li>
-              <li><a href="#story" className="hover:text-amber-400 transition-colors">❤️ Artisan Home Bakery Story</a></li>
+              <li><Link to="/products" className="hover:text-amber-400 transition-colors">🍪 Products Catalog</Link></li>
+              <li><Link to="/about-us" className="hover:text-amber-400 transition-colors">🌾 About Mousahi</Link></li>
+              <li><Link to="/blog" className="hover:text-amber-400 transition-colors">📸 Blog & Recipes</Link></li>
+              <li><Link to="/gifts" className="hover:text-amber-400 transition-colors">🎁 Gift Packs</Link></li>
+              <li><Link to="/" className="hover:text-amber-400 transition-colors">🏠 Back to Home</Link></li>
             </ul>
           </div>
 

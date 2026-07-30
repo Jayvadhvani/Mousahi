@@ -82,7 +82,7 @@ export default function HeroBanner({ onExploreMenu }) {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
               <a
                 href="#product"
-                className="w-full sm:w-auto bg-gradient-to-r from-amber-600 via-amber-700 to-emerald-800 hover:from-amber-700 hover:to-emerald-900 text-white font-heading font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto bg-[#3D2314] hover:bg-[#2A180E] text-white font-heading font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
               >
                 <span>Order Sample Pack (₹130)</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -110,7 +110,7 @@ export default function HeroBanner({ onExploreMenu }) {
               {/* Product Poster Card */}
               <div className="relative bg-white p-3 rounded-3xl shadow-xl border border-amber-200/80 overflow-hidden group">
                 <img
-                  src="./images/ragi_choco_chip.jpg"
+                  src="/images/ragi_choco_chip.jpg"
                   alt="Ragi Oats Chocolate Cookies Sample Pack"
                   className="w-full h-[360px] sm:h-[420px] object-cover rounded-2xl group-hover:scale-103 transition-transform duration-700"
                 />

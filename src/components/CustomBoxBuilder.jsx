@@ -41,7 +41,7 @@ export default function CustomBoxBuilder({ onAddToCart }) {
     onAddToCart({
       cookieId: `custom-box-${boxSize}`,
       name: `🎁 Custom Assorted Cookie Box (${boxSize} Pcs)`,
-      image: './images/kids_party_pack.jpg',
+      image: '/images/kids_party_pack.jpg',
       weight: `${boxSize} Pcs Box`,
       quantity: 1,
       unitPrice: getBoxPrice(),
