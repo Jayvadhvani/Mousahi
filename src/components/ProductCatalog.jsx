@@ -50,7 +50,7 @@ function ProductCard({ cookie, minPrice, onSelectProduct }) {
             <span className="text-lg font-heading font-extrabold text-amber-950">₹{minPrice}</span>
           </div>
 
-          <span className="bg-amber-50 text-amber-950 group-hover:bg-amber-600 group-hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 border border-amber-200 group-hover:border-amber-600">
+          <span className="bg-amber-600 text-white group-hover:bg-amber-700 px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 border border-amber-600 group-hover:border-amber-700 shadow-sm">
             <span>Order Now</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </span>
